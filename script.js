@@ -1,3 +1,5 @@
+
+
 function addTextToScreen(btnvalue) {
     const inputSelector = document.getElementById('input-div')
 
@@ -7,8 +9,9 @@ function addTextToScreen(btnvalue) {
 function answer(){
     const inputSelector = document.getElementById('input-div')
     const outputSelector = document.getElementById('output-div')
+    const finalInput = inputSelector.innerText.replace('%', '/100')
 
-    var finalAnswer = eval(inputSelector.innerText);
+    var finalAnswer = eval(finalInput);
 
     outputSelector.innerText = finalAnswer;
 }
@@ -37,3 +40,8 @@ document.onkeypress = function (e) {
       $("#calc").text(keyPressed);
     }
 };
+
+// input keyboard
+// document.addEventListener('keydown', function (event) {
+//     addTextToScreen(event.key)
+// });
